@@ -209,7 +209,7 @@
           <button
             (click)="startTask()"
             *ngIf="!task.isDone && !isCurrent && !task.subTasks?.length"
-            [title]="T.F.TASK.CMP.TRACK_TIME|translate"
+            title="{{T.F.TASK.CMP.TRACK_TIME|translate}} {{_kb.togglePlay?'['+_kb.togglePlay+']':''}}"
             class="ico-btn start-task-btn"
             color=""
             mat-icon-button
@@ -223,7 +223,7 @@
           <button
             (click)="pauseTask()"
             *ngIf="!task.isDone && isCurrent && !task.subTasks?.length"
-            [title]="T.F.TASK.CMP.TRACK_TIME_STOP|translate"
+            title="{{T.F.TASK.CMP.TRACK_TIME_STOP|translate}} {{_kb.togglePlay?'['+_kb.togglePlay+']':''}}"
             class="ico-btn"
             color="accent"
             mat-icon-button
@@ -234,7 +234,7 @@
           <button
             (click)="addToMyDay()"
             *ngIf="isShowAddToToday"
-            [title]="T.F.TASK.CMP.ADD_TO_MY_DAY|translate"
+            title="{{T.F.TASK.CMP.ADD_TO_MY_DAY|translate}} {{_kb.moveToTodaysTasks?'['+_kb.moveToTodaysTasks+']':''}}"
             class="ico-btn"
             color=""
             mat-icon-button
@@ -256,7 +256,7 @@
           <button
             *ngIf="!task.isDone"
             (click)="toggleTaskDone()"
-            [title]="T.F.TASK.CMP.TOGGLE_DONE|translate"
+            title="{{T.F.TASK.CMP.TOGGLE_DONE|translate}} {{_kb.taskToggleDone?'['+_kb.taskToggleDone+']':''}}"
             class="ico-btn task-done-btn"
             color=""
             mat-icon-button
@@ -267,7 +267,7 @@
           <button
             (click)="toggleShowAdditionalInfoOpen()"
             *ngIf="!task.notes && (!task.issueId||task.issueType==='CALENDAR') && !isSelected"
-            [title]="T.F.TASK.CMP.TOGGLE_ADDITIONAL|translate"
+            title="{{T.F.TASK.CMP.TOGGLE_ADDITIONAL|translate}} {{_kb.taskToggleAdditionalInfoOpen?'['+_kb.taskToggleAdditionalInfoOpen+']':''}}"
             class="ico-btn show-additional-info-btn"
             color=""
             mat-icon-button
@@ -310,7 +310,7 @@
           <button
             (click)="toggleShowAdditionalInfoOpen()"
             *ngIf="task.notes|| (task.issueId&&task.issueType!=='CALENDAR') || isSelected"
-            [title]="T.F.TASK.CMP.TOGGLE_ADDITIONAL|translate"
+            title="{{T.F.TASK.CMP.TOGGLE_ADDITIONAL|translate}}  {{_kb.taskToggleAdditionalInfoOpen?'['+_kb.taskToggleAdditionalInfoOpen+']':''}}"
             [class.closeBtn]="!task.issueWasUpdated && isSelected"
             class="ico-btn show-additional-info-btn"
             color=""
